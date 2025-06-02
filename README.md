@@ -1,6 +1,6 @@
 ## 1. 运行
 
-python main.py
+python 05_file_parsing_optimize.py
 
 ## 2. 报错解决方案
 
