@@ -22,7 +22,7 @@ def main():
 
     # read bytes
     reader1 = FileBasedDataReader("")
-    pdf_bytes = reader1.read(pdf_file_name)  # read the pdf content
+    pdf_bytes = reader1.read(f"data/{pdf_file_name}")  # read the pdf content
 
     # proc
     # Create Dataset Instance
