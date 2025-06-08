@@ -37,7 +37,13 @@ python app/fileParsing/pdf2Markdown.py
 
 ## 文章连载
 
-本项目是 AI 应用开发实践项目（python 版），将会涵盖 AI 应用开发中涉及到各种技术，包括但不限于提示工程、RAG、模型微调、Agent 等等。
+本系列文章将会系统性讲解涵盖 AI 应用开发中涉及到的各种技术，包括但不限于提示工程、RAG、模型微调、Agent 等等。
+
+### 微信公众号
+
+欢迎大家关注我的微信公众号【燃哥讲 AI】，分享前端 x AI 的前沿技术，注重理论结合实践，助你成为 AI 浪潮中的超级个体！
+
+![微信公众号：燃哥讲AI](https://github.com/user-attachments/assets/465ecea4-52e6-4917-baf1-c6debdd19db1)
 
 ### 入门基础系列
 
@@ -67,9 +73,3 @@ python app/fileParsing/pdf2Markdown.py
 ### Agent 系列
 
 待更新，敬请期待...
-
-### 微信公众号
-
-欢迎大家关注我的微信公众号【燃哥讲 AI】，分享前端 x AI 的前沿技术，注重理论结合实践，助你成为 AI 浪潮中的超级个体！
-
-![微信公众号：燃哥讲AI](https://github.com/user-attachments/assets/465ecea4-52e6-4917-baf1-c6debdd19db1)
