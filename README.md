@@ -10,12 +10,6 @@ pip install -r requirements.txt
 
 文件解析工具 `MinerU` 安装说明：https://github.com/opendatalab/MinerU/blob/master/README_zh-CN.md
 
-修改 app 下的 python 文件并运行。例如：
-
-```bash
-python app/fileParsing/pdf2Markdown.py
-```
-
 ## 项目介绍
 
 ### 文件解析
