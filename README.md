@@ -40,7 +40,7 @@ python -m RAG.examples.01_simple_rag
 
 ### 微信公众号
 
-欢迎大家关注我的微信公众号【燃哥讲 AI】，分享前端 x AI 的前沿技术，注重理论结合实践，助你成为 AI 浪潮中的超级个体！
+欢迎大家关注我的微信公众号【燃哥讲 AI】，分享 AI 应用开发前沿技术，注重理论结合实践，助你成为 AI 浪潮中的超级个体！
 
 ![微信公众号：燃哥讲AI](https://github.com/user-attachments/assets/465ecea4-52e6-4917-baf1-c6debdd19db1)
 
@@ -64,6 +64,7 @@ python -m RAG.examples.01_simple_rag
 - [RAG 系列（六）：问题优化 - 意图识别&同义改写&多视角分解&补充上下文](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407082&idx=1&sn=8c4e5aff9ef7e31c8f5f750b4efe403f&chksm=82caf787b5bd7e919654692c9ea4d1c5204388388a9bea8bf2af60f6e3f41ca03ec751cd14fe&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
 - [RAG 系列（七）：解析优化 - 不同文件类型统一转换成 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407115&idx=1&sn=c37553fbca6e25d4a37498ca4776810a&chksm=82caf7e6b5bd7ef066b166d6471f73a685062f3109bcbe298bbd8331765dda1e553f62537770&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 - [RAG 系列（八）：切分优化 - 基于 Markdown 语法的文档切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407125&idx=1&sn=525e674bb922a42afcecfd589d27d29f&chksm=82caf7f8b5bd7eeeca466f192d4fa5c962e0aeb9553fe5c6ff977fc81d7a5866e54507fbcbaf&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
+- [RAG系列（九）：解析优化 - 使用 Doc2X 将 PDF 高效转换为 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407143&idx=1&sn=4cbce9094034dd52278fa38066534a1b&chksm=82caf7cab5bd7edcdc7e98ef050facd31086b2311625e55deb9ff69ee55899e916774655cd83&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
 
 ### 模型微调系列
 
