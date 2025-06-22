@@ -75,7 +75,7 @@ def semantic_chunker(
     text_splitter = SemanticChunker(
         embeddings=embeddings,
         breakpoint_threshold_type=new_type,
-        sentence_split_regex=r"(?<=[。！？\n])",
+        sentence_split_regex=r"(?<=[。？！\n])",
         number_of_chunks=number_of_chunks,
     )
     documents = text_splitter.split_documents(documents=documents)
