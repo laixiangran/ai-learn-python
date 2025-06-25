@@ -1,6 +1,7 @@
 import json
 from typing import List, Literal
 from langchain_core.documents import Document
+from langchain_experimental.text_splitter import SemanticChunker
 from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
     MarkdownTextSplitter,
@@ -159,5 +160,7 @@ def TextSplitter(
         return MarkdownTextSplitter(**kwargs)
     elif provider == "customMarkdownText":
         return CustomMarkdownTextSplitter(**kwargs)
+    elif provider == "semanticChunker":
+        return SemanticChunker(**kwargs)
     else:
         raise ValueError(f"Provider {provider} not supported.")

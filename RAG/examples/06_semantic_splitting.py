@@ -1,12 +1,9 @@
 import json
-import re
 from cv2 import merge
-from langchain_experimental.text_splitter import SemanticChunker
 from RAG.libs.chat import Chat
 from RAG.libs.evaluator import BatchEvaluator
 from RAG.libs.file_loader import FileLoader
 from RAG.libs.embedding import Embedding
-from RAG.libs.prompts import Prompts
 from RAG.libs.text_splitter import (
     TextSplitter,
     merge_small_documents,
@@ -72,7 +69,8 @@ def semantic_chunker(
         new_type = type.split("-")[0]
         number_of_chunks = int(type.split("-")[1])
     print("number_of_chunks", number_of_chunks)
-    text_splitter = SemanticChunker(
+    text_splitter = TextSplitter(
+        provider="semanticChunker",
         embeddings=embeddings,
         breakpoint_threshold_type=new_type,
         sentence_split_regex=r"(?<=[。？！\n])",
