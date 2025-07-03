@@ -58,7 +58,7 @@ class ContextRecallEvaluator:
         datas = []
         for referenceAnswerStatement in evaluate_data["referenceAnswerStatements"]:
             input = Prompts.context_recall_evaluat_prompt.format(
-                context=("\n").join(retrievedContext),
+                context="\n".join(retrievedContext),
                 statement=referenceAnswerStatement,
             )
             print("input：", input)
@@ -180,35 +180,42 @@ class FaithfulnessEvaluator:
         """
         retrievedContext = evaluate_data["retrievedContext"]
         answer = evaluate_data["answer"]
-        if (
-            force_generate == True
-            or "answerStatements" not in evaluate_data
-            or not evaluate_data["answerStatements"]
-        ):
-            input = Prompts.statement_split_prompt.format(context=answer)
-            result = self.chat_model.invoke(input=input)
-            print("statement_split: ", result.content)
-            answerStatements = json.loads(result.content)
-            evaluate_data["answerStatements"] = answerStatements
-        datas = []
-        for answerStatement in evaluate_data["answerStatements"]:
-            input = Prompts.faithfulness_evaluat_prompt.format(
-                context=retrievedContext, statement=answerStatement
-            )
-            print("input：", input)
-            evaluate_result = self.chat_model.invoke(input=input)
-            # 偶尔出现json格式不对，LLM 重新生成一次
-            try:
-                data = json.loads(evaluate_result.content)
-            except:
+        notAnswerStr = "我无法根据现有信息回答这个问题"
+        if notAnswerStr in answer:
+            # 如果答案是无法回答，则直接返回0.8分（暂定）
+            result = {"score": 0.8, "data": []}
+        else:
+            if (
+                force_generate == True
+                or "answerStatements" not in evaluate_data
+                or not evaluate_data["answerStatements"]
+            ):
+                input = Prompts.statement_split_prompt.format(context=answer)
+                result = self.chat_model.invoke(input=input)
+                print("statement_split: ", result.content)
+                answerStatements = json.loads(result.content)
+                evaluate_data["answerStatements"] = answerStatements
+            datas = []
+            for answerStatement in evaluate_data["answerStatements"]:
+                input = Prompts.faithfulness_evaluat_prompt.format(
+                    context=retrievedContext, statement=answerStatement
+                )
+                print("input：", input)
                 evaluate_result = self.chat_model.invoke(input=input)
-                data = json.loads(evaluate_result.content)
-            data["answerStatement"] = answerStatement
-            datas.append(data)
-        score = 0
-        if len(datas) > 0:
-            score = round(sum([float(item["score"]) for item in datas]) / len(datas), 2)
-        result = {"score": score, "data": datas}
+                # 偶尔出现json格式不对，LLM 重新生成一次
+                try:
+                    data = json.loads(evaluate_result.content)
+                except:
+                    evaluate_result = self.chat_model.invoke(input=input)
+                    data = json.loads(evaluate_result.content)
+                data["answerStatement"] = answerStatement
+                datas.append(data)
+            score = 0
+            if len(datas) > 0:
+                score = round(
+                    sum([float(item["score"]) for item in datas]) / len(datas), 2
+                )
+            result = {"score": score, "data": datas}
         print("FaithfulnessEvaluator: ", result)
         return result
 
@@ -252,38 +259,45 @@ class AnswerRelevanceEvaluator:
         """
         question = evaluate_data["question"]
         answer = evaluate_data["answer"]
-        if (
-            force_generate == True
-            or "simulationQuestions" not in evaluate_data
-            or not evaluate_data["simulationQuestions"]
-        ):
-            input = Prompts.simulation_question_generate_prompt.format(
-                context=answer, num=3
-            )
-            result = self.chat_model.invoke(input=input)
-            print("simulation_question: ", result)
-            simulationQuestions = json.loads(result.content)
-            evaluate_data["simulationQuestions"] = simulationQuestions
-        datas = []
-        for simulationQuestion in evaluate_data["simulationQuestions"]:
-            input = Prompts.answer_relevance_evaluat_prompt.format(
-                question=question, simulationQuestion=simulationQuestion
-            )
-            print("input：", input)
-            evaluate_result = self.chat_model.invoke(input=input)
-            print(evaluate_result.content)
-            # 偶尔出现json格式不对，LLM 重新生成一次
-            try:
-                data = json.loads(evaluate_result.content)
-            except:
+        notAnswerStr = "我无法根据现有信息回答这个问题"
+        if notAnswerStr in answer:
+            # 如果答案是无法回答，则直接返回0.8分（暂定）
+            result = {"score": 0.8, "data": []}
+        else:
+            if (
+                force_generate == True
+                or "simulationQuestions" not in evaluate_data
+                or not evaluate_data["simulationQuestions"]
+            ):
+                input = Prompts.simulation_question_generate_prompt.format(
+                    context=answer, num=3
+                )
+                result = self.chat_model.invoke(input=input)
+                print("simulation_question: ", result)
+                simulationQuestions = json.loads(result.content)
+                evaluate_data["simulationQuestions"] = simulationQuestions
+            datas = []
+            for simulationQuestion in evaluate_data["simulationQuestions"]:
+                input = Prompts.answer_relevance_evaluat_prompt.format(
+                    question=question, simulationQuestion=simulationQuestion
+                )
+                print("input：", input)
                 evaluate_result = self.chat_model.invoke(input=input)
-                data = json.loads(evaluate_result.content)
-            data["simulationQuestion"] = simulationQuestion
-            datas.append(data)
-        score = 0
-        if len(datas) > 0:
-            score = round(sum([float(item["score"]) for item in datas]) / len(datas), 2)
-        result = {"score": score, "data": datas}
+                print(evaluate_result.content)
+                # 偶尔出现json格式不对，LLM 重新生成一次
+                try:
+                    data = json.loads(evaluate_result.content)
+                except:
+                    evaluate_result = self.chat_model.invoke(input=input)
+                    data = json.loads(evaluate_result.content)
+                data["simulationQuestion"] = simulationQuestion
+                datas.append(data)
+            score = 0
+            if len(datas) > 0:
+                score = round(
+                    sum([float(item["score"]) for item in datas]) / len(datas), 2
+                )
+            result = {"score": score, "data": datas}
         print("AnswerRelevanceEvaluator: ", result)
         return result
 

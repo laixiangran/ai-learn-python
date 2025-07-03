@@ -15,7 +15,7 @@ from RAG.libs.utils import (
 )
 from RAG.libs.vector_store import VectorStore
 
-base_path = "RAG/datas/split_data/semantic_splitting"
+base_path = "RAG/datas/split_data/06_semantic_splitting"
 collection_name = "06_semantic_splitting_collection"
 is_add_store = True
 breakpoint_threshold_types = [

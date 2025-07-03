@@ -44,3 +44,7 @@ next-env.d.ts
 output/
 **/__pycache__/
 chroma_data/
+
+# 过程数据
+split_data/
+evaluate_data/
