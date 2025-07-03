@@ -65,6 +65,7 @@ python -m RAG.examples.01_simple_rag
 - [RAG 系列（七）：解析优化 - 不同文件类型统一转换成 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407115&idx=1&sn=c37553fbca6e25d4a37498ca4776810a&chksm=82caf7e6b5bd7ef066b166d6471f73a685062f3109bcbe298bbd8331765dda1e553f62537770&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 - [RAG 系列（八）：切分优化 - 基于 Markdown 语法的文档切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407125&idx=1&sn=525e674bb922a42afcecfd589d27d29f&chksm=82caf7f8b5bd7eeeca466f192d4fa5c962e0aeb9553fe5c6ff977fc81d7a5866e54507fbcbaf&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 - [RAG系列（九）：解析优化 - 使用 Doc2X 将 PDF 高效转换为 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407143&idx=1&sn=4cbce9094034dd52278fa38066534a1b&chksm=82caf7cab5bd7edcdc7e98ef050facd31086b2311625e55deb9ff69ee55899e916774655cd83&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
+- [RAG系列（十）：切分优化 - 基于句子相似距离的语义切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407169&idx=1&sn=4371f2a422cd3e2aa770db0f8fa28194&chksm=82caf62cb5bd7f3a69d90405522e88f082e8351a08fb33c21e7697242b0aeb94994e23fba28f&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 
 ### 模型微调系列
 
