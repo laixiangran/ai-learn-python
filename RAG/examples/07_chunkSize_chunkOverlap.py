@@ -18,7 +18,7 @@ collection_name = "07_chunkSize_chunkOverlap_collection"
 is_add_store = True
 
 # 块大小
-chunk_sizes = [128, 256, 384, 512, 640, 768, 896, 1024]
+chunk_sizes = [128, 256, 384, 512, 640, 768, 896, 1024, 1536, 2048]
 
 # 块重叠（占块大小的比例）
 overlap_ratios = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
