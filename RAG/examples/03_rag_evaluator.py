@@ -6,7 +6,7 @@ from RAG.libs.vector_store import VectorStore
 
 
 def demo():
-    qa_test_path = "RAG/datas/evaluate_data/qa_test_10.json"
+    qa_test_path = "RAG/datas/qa_test_10.json"
     with open(qa_test_path, "r") as f:
         qa_data = json.load(f)
     chat_model_name = "qwen2.5:14b"
@@ -24,7 +24,7 @@ def demo():
         provider=vector_store_provider,
     )
     filter = None
-    output_path = f"RAG/datas/evaluate_data/rag_evaluate_v1.0.json"
+    output_path = f"RAG/output/evaluate_data/rag_evaluate_v1.0.json"
     eval_result = BatchEvaluator(
         chat_model=chat_model,
         vector_store=vector_store,

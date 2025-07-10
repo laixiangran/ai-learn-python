@@ -13,7 +13,7 @@ from RAG.libs.utils import (
 )
 from RAG.libs.vector_store import VectorStore
 
-base_path = "RAG/datas/split_data/07_chunkSize_chunkOverlap"
+base_path = "RAG/output/split_data/07_chunkSize_chunkOverlap"
 collection_name = "07_chunkSize_chunkOverlap_collection"
 is_add_store = True
 
@@ -36,7 +36,7 @@ def chunkSize_chunkOverlap_evaluate(qa_data):
         for overlap_ratio in overlap_ratios:
             type = f"{chunk_size}_{overlap_ratio}"
             filter = {"type": type}
-            output_path = f"RAG/datas/evaluate_data/rag_evaluate_v7.0_{type}.json"
+            output_path = f"RAG/output/evaluate_data/rag_evaluate_v7.0_{type}.json"
             eval_result = BatchEvaluator(
                 chat_model=chat_model,
                 vector_store=vector_store,

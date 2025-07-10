@@ -3,7 +3,7 @@ import json
 from collections import defaultdict
 
 # 目录路径
-data_dir = "RAG/datas/evaluate_data"
+data_dir = "RAG/output/evaluate_data"
 
 # 只处理 rag_evaluate_v7.0 开头的文件
 files = [
@@ -71,5 +71,5 @@ for type_str, values in stats.items():
 # 按 type 排序输出
 result = sorted(result, key=lambda x: x["type"])
 # 输出到文件
-with open("RAG/datas/evaluate_data/analysis_data.json", "w") as f:
+with open("RAG/output/evaluate_data/analysis_data.json", "w") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
