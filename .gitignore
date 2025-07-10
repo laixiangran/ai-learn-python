@@ -48,3 +48,4 @@ chroma_data/
 # 过程数据
 split_data/
 evaluate_data/
+omnidocbench_pdf/
