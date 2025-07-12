@@ -15,24 +15,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-- 文件解析工具 `MinerU` （本仓库使用版本：1.3.12）安装说明：[https://github.com/opendatalab/MinerU/blob/magic_pdf-1.3.12-released/README_zh-CN.md](https://github.com/opendatalab/MinerU/blob/magic_pdf-1.3.12-released/README_zh-CN.md) 。目前 MinerU 已升级到 2.0.0，了解最新信息，可看：[https://github.com/opendatalab/MinerU/blob/mineru-2.0.0-released/README_zh-CN.md](https://github.com/opendatalab/MinerU/blob/mineru-2.0.0-released/README_zh-CN.md)
+- 文件解析工具 `MinerU` （本仓库使用版本：2.1.0）安装说明：[https://github.com/opendatalab/MinerU/blob/mineru-2.0.0-released/README_zh-CN.md](https://github.com/opendatalab/MinerU/blob/mineru-2.0.0-released/README_zh-CN.md)
 
 - 程序运行
 
 ```bash
 python -m RAG.examples.01_simple_rag
 ```
-
-## 一些问题
-
-### AttributeError: module 'torch' has no attribute 'get_default_device'
-
-降级 transformers 到 4.49.0
-`pip install transformers==4.49.0`
-
-### 安装的 magic-pdf 始终是 0.6.1
-
-确保 python 版本在 3.10 ～ 3.12 之间
 
 ## 文章连载
 
@@ -61,11 +50,11 @@ python -m RAG.examples.01_simple_rag
 - [RAG 系列（三）：系统评估 - 构造 QA 测试数据集](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407042&idx=1&sn=5bf699ac9963143732314a54e24ff6c8&chksm=82caf7afb5bd7eb92bd7eda5831354e822b6214b43e3e5917898cedc3b80f475b989c077e50f&cur_album_id=3879147818837032971&scene=189#wechat_redirect)
 - [RAG 系列（四）：系统评估 - 五个主流评估指标详解](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407054&idx=1&sn=55aacdc9a453a4d8352f62e2c182c68e&chksm=82caf7a3b5bd7eb5e633084712c436976d809357ef2b99f3ed1cfca06c33b73a5078a2a9ba85&cur_album_id=3879147818837032971&scene=189#wechat_redirect)
 - [RAG 系列（五）：系统评估 - 基于 LLM-as-judge 实现评估系统](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407071&idx=1&sn=7964554f13eadda3c3ce592ba8a54faf&chksm=82caf7b2b5bd7ea48f46540f7f674ea5accb3680acb208504a2f6ace8bd589a826302aa4d960&cur_album_id=3879147818837032971&scene=189#wechat_redirect)
-- [RAG 系列（六）：问题优化 - 意图识别&同义改写&多视角分解&补充上下文](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407082&idx=1&sn=8c4e5aff9ef7e31c8f5f750b4efe403f&chksm=82caf787b5bd7e919654692c9ea4d1c5204388388a9bea8bf2af60f6e3f41ca03ec751cd14fe&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
+- [RAG 系列（六）：问题优化 - 意图识别&amp;同义改写&amp;多视角分解&amp;补充上下文](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407082&idx=1&sn=8c4e5aff9ef7e31c8f5f750b4efe403f&chksm=82caf787b5bd7e919654692c9ea4d1c5204388388a9bea8bf2af60f6e3f41ca03ec751cd14fe&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
 - [RAG 系列（七）：解析优化 - 不同文件类型统一转换成 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407115&idx=1&sn=c37553fbca6e25d4a37498ca4776810a&chksm=82caf7e6b5bd7ef066b166d6471f73a685062f3109bcbe298bbd8331765dda1e553f62537770&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 - [RAG 系列（八）：切分优化 - 基于 Markdown 语法的文档切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407125&idx=1&sn=525e674bb922a42afcecfd589d27d29f&chksm=82caf7f8b5bd7eeeca466f192d4fa5c962e0aeb9553fe5c6ff977fc81d7a5866e54507fbcbaf&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
-- [RAG系列（九）：解析优化 - 使用 Doc2X 将 PDF 高效转换为 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407143&idx=1&sn=4cbce9094034dd52278fa38066534a1b&chksm=82caf7cab5bd7edcdc7e98ef050facd31086b2311625e55deb9ff69ee55899e916774655cd83&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
-- [RAG系列（十）：切分优化 - 基于句子相似距离的语义切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407169&idx=1&sn=4371f2a422cd3e2aa770db0f8fa28194&chksm=82caf62cb5bd7f3a69d90405522e88f082e8351a08fb33c21e7697242b0aeb94994e23fba28f&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
+- [RAG 系列（九）：解析优化 - 使用 Doc2X 将 PDF 高效转换为 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407143&idx=1&sn=4cbce9094034dd52278fa38066534a1b&chksm=82caf7cab5bd7edcdc7e98ef050facd31086b2311625e55deb9ff69ee55899e916774655cd83&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
+- [RAG 系列（十）：切分优化 - 基于句子相似距离的语义切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407169&idx=1&sn=4371f2a422cd3e2aa770db0f8fa28194&chksm=82caf62cb5bd7f3a69d90405522e88f082e8351a08fb33c21e7697242b0aeb94994e23fba28f&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 
 ### 模型微调系列
 

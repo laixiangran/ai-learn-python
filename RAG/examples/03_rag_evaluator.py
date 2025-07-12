@@ -24,7 +24,7 @@ def demo():
         provider=vector_store_provider,
     )
     filter = None
-    output_path = f"RAG/output/evaluate_data/rag_evaluate_v1.0.json"
+    output_path = f"datas/outputs/evaluate_data/rag_evaluate_v1.0.json"
     eval_result = BatchEvaluator(
         chat_model=chat_model,
         vector_store=vector_store,

@@ -15,7 +15,7 @@ from RAG.libs.utils import (
 )
 from RAG.libs.vector_store import VectorStore
 
-base_path = "RAG/output/split_data/06_semantic_splitting"
+base_path = "datas/outputs/split_data/06_semantic_splitting"
 collection_name = "06_semantic_splitting_collection"
 is_add_store = True
 breakpoint_threshold_types = [
@@ -37,7 +37,7 @@ def semantic_splitting_evaluate(qa_data):
     result = []
     for i, type in enumerate(breakpoint_threshold_types):
         filter = {"type": type}
-        output_path = f"RAG/output/evaluate_data/rag_evaluate_v6.0_{type}.json"
+        output_path = f"datas/outputs/evaluate_data/rag_evaluate_v6.0_{type}.json"
         eval_result = BatchEvaluator(
             chat_model=chat_model,
             vector_store=vector_store,
@@ -131,7 +131,7 @@ def semantic_splitting():
 
 
 if __name__ == "__main__":
-    qa_test_path = "RAG/output/evaluate_data/qa_test_10.json"
+    qa_test_path = "datas/outputs/evaluate_data/qa_test_10.json"
     with open(qa_test_path, "r") as f:
         qa_data = json.load(f)
 

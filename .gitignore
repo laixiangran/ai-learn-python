@@ -42,6 +42,7 @@ next-env.d.ts
 
 .venv/
 output/
+outputs/
 **/__pycache__/
 chroma_data/
 
