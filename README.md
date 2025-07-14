@@ -55,6 +55,7 @@ python -m RAG.examples.01_simple_rag
 - [RAG 系列（八）：切分优化 - 基于 Markdown 语法的文档切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407125&idx=1&sn=525e674bb922a42afcecfd589d27d29f&chksm=82caf7f8b5bd7eeeca466f192d4fa5c962e0aeb9553fe5c6ff977fc81d7a5866e54507fbcbaf&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
 - [RAG 系列（九）：解析优化 - 使用 Doc2X 将 PDF 高效转换为 Markdown](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407143&idx=1&sn=4cbce9094034dd52278fa38066534a1b&chksm=82caf7cab5bd7edcdc7e98ef050facd31086b2311625e55deb9ff69ee55899e916774655cd83&scene=178&cur_album_id=3920944561060528133&search_click_id=#rd)
 - [RAG 系列（十）：切分优化 - 基于句子相似距离的语义切分](https://mp.weixin.qq.com/s?__biz=MzAwMjgzNTAxMA==&mid=2650407169&idx=1&sn=4371f2a422cd3e2aa770db0f8fa28194&chksm=82caf62cb5bd7f3a69d90405522e88f082e8351a08fb33c21e7697242b0aeb94994e23fba28f&cur_album_id=3920944561060528133&scene=189#wechat_redirect)
+- [RAG 系列（十一）：复杂文档解析不理想？使用 TextIn xParse 轻松解析多样性 PDF 文档](https://mp.weixin.qq.com/s/uLwEXsOBUzEdLjSw7w779w)
 
 ### 模型微调系列
 
