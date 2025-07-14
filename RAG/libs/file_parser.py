@@ -31,6 +31,21 @@ from mineru.backend.vlm.vlm_middle_json_mkcontent import union_make as vlm_union
 from docling.document_converter import DocumentConverter
 
 
+def save_to_markdown(output_dir, path, md):
+    # 确保输出目录存在
+    os.makedirs(output_dir, exist_ok=True)
+
+    # 构建输出文件路径
+    output_file = os.path.join(output_dir, os.path.basename(path).split(".")[0] + ".md")
+
+    # 写入文件，使用上下文管理器自动处理资源
+    try:
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(md)
+    except (IOError, OSError) as e:
+        raise RuntimeError(f"写入文件 {output_file} 时发生错误: {e}") from e
+
+
 class MinerUParser:
     """
     基于 MinerU（2.1.0）的文件解析器
@@ -338,7 +353,7 @@ class DoclingParser:
         for path in path_list:
             result = converter.convert(path)
             md = result.document.export_to_markdown()
-            print(md)
+            save_to_markdown(output_dir, path, md)
 
 
 def FileParser(
